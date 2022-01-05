@@ -17,7 +17,8 @@ User Stories
 Functional Details
 ------
 For the simplicity of this project, the items the user will search for will be limited to the following:
-apple, banana, cookie, donut, egg and flour (spanning the letters A - F).
+apple, banana, cookie, donut, egg and flour (spanning the letters A - F), and will only include apple,
+ donut and flour will be used.
 
 The order the user provides the items is not relevant. The path returned will attempt to minimize travel
 distance for the user but does not guarantee the absolute minimum (i.e. does not claim to solve the

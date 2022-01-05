@@ -1,9 +1,20 @@
-const grid1 = [
-  [{isWalkable: false, item: 0},{isWalkable: false, item: 0},{isWalkable: true, item: 0}],
-  [{isWalkable: true, item: 0},{isWalkable: true, item: "apple"},{isWalkable: true, item: 0}],
-  [{isWalkable: true, item: 0},{isWalkable: false, item: 0},{isWalkable: true, item: "banana"}]
+const {APPLE, DONUT, FLOUR} = require('./items.js')
+
+class matrixNode {
+  constructor(walkable, item){
+    this.isWalkable = walkable,
+    this.item = item
+  }
+}
+
+const matrix1 = []
+
+// 4x4 grid containing APPLE, DONUT and FLOUR.
+const matrix2 = [
+  [new matrixNode(true, false), new matrixNode(false, false), new matrixNode(true, false), new matrixNode(true, APPLE)],
+  [new matrixNode(true, false), new matrixNode(false, false), new matrixNode(true, false), new matrixNode(true, false)],
+  [new matrixNode(true, false), new matrixNode(false, false), new matrixNode(true, FLOUR), new matrixNode(true, false)],
+  [new matrixNode(true, DONUT), new matrixNode(true, false), new matrixNode(true, false), new matrixNode(true, false)]
 ]
 
-const grid2 = []
-
-module.exports = {grid1, grid2}
+module.exports = {matrix1, matrix2}

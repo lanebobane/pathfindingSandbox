@@ -1,34 +1,18 @@
 const PF = require('pathfinding');
-const { grid1, grid2 } = require('./grid.js')
+const { matrix1, matrix2 } = require('./grid.js')
+const { makeGridFromMatrix, makeItemList, createPath } = require('./utils.js')
+const {APPLE, DONUT, FLOUR} = require('./items.js')
 
-// A quick demo of Pathfinding.js's functionality.
-function helloWorld() {
+console.log("Grid:")
+const grid = makeGridFromMatrix(matrix2)
+console.log(grid)
 
-  // 0's are walkable cells, 1's are obstacles.
-  var matrix = [
-    [0, 0, 1, 1],
-    [1, 0, 0, 0],
-    [0, 0, 1, 0],
-    [0, 0, 1, 0],
-  ];
+console.log("List:")
+const list = [APPLE, DONUT]
+const itemList = makeItemList(matrix2)
+console.log(itemList)
 
-  // You can create Grid objects in two ways.
-  var gridMatrix = new PF.Grid(matrix);
-  let grid = new PF.Grid(4, 4);
+console.log("Path:")
+const path = createPath(grid, itemList)
+console.log(path)
 
-  // Finders use a specific pathfinding algorithm.
-  var finder = new PF.AStarFinder();
-
-  // Finders can be used on different Grids.
-  var path = finder.findPath(0, 0, 3, 3, grid);
-  var pathMatrix = finder.findPath(0, 0, 3, 3, gridMatrix);
-
-  console.log('Path using Grid with no obstacles')
-  console.log(path)
-  console.log("*******")
-  console.log('Path using Grid containing obstacles')
-  console.log(pathMatrix)
-}
-
-console.log(grid1)
-console.log(grid2)
