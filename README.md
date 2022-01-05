@@ -77,11 +77,9 @@ Element Objects:
 ```{isWalkable: true, item: 0}```
 
 Grid
-```[
-  [{isWalkable: false, item: 0},{isWalkable: false, item: 0},{isWalkable: true, item: 0}],
-  [{isWalkable: true, item: 0},{isWalkable: true, item: "apple"},{isWalkable: true, item: 0}],
-  [{isWalkable: true, item: 0},{isWalkable: false, item: 0},{isWalkable: true, item: "banana"}],
-]```
+
+  ```[[{isWalkable: false, item: 0},{isWalkable: false, item: 0},{isWalkable: true, item: 0}],[{isWalkable: true, item: 0},{isWalkable: true, item: "apple"},{isWalkable: true, item: 0}],[{isWalkable: true, item: 0},{isWalkable: false, item: 0},{isWalkable: true, item: "banana"}]]```
+
 
 Demo
 ------
