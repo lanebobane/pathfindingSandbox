@@ -1,7 +1,7 @@
 const PF = require('pathfinding');
 
 //build the grid that will be fed into the pathfinding algo (line 16 in helloWorld).
-function makeGridFromMatrix(matrix){
+function makeMatrixFromLayout(matrix){
   let grid = []
   for(let i=0; i < matrix.length; i++){
     grid.push([])
@@ -19,6 +19,7 @@ function makeGridFromMatrix(matrix){
 
 // gets all items in the grid and returns a list formatted for Pathfinding.js
 // to use.
+// TODO: change this to take an item list and return false if not all items are found. Will also need to change docs to reflect this not returning the missing items (bc doing so its really critical).
 function makeItemList(matrix){
   let itemList = []
   for(let i=0; i < matrix.length; i++){
@@ -40,10 +41,6 @@ function makeItemList(matrix){
 function createPath(_grid, itemList){
   let finder = new PF.AStarFinder();
   let grid = new PF.Grid(_grid)
-  console.log(itemList[0].x)
-  console.log(itemList[0].y)
-  console.log(itemList[1].x)
-  console.log(itemList[1].y)
   let path = finder.findPath(
     itemList[0].x,
     itemList[0].y,
@@ -55,4 +52,4 @@ function createPath(_grid, itemList){
 }
 
 
-module.exports = {makeGridFromMatrix, makeItemList, createPath}
+module.exports = {makeMatrixFromLayout, makeItemList, createPath}
