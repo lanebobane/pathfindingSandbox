@@ -70,7 +70,10 @@ layoutNode Class:
 
 Layout
 
-  ```[new layoutNode(true, false), new layoutNode(false, false), new layoutNode(true, false), new layoutNode(true, APPLE)],[new layoutNode(true, false), new layoutNode(false, false), new layoutNode(true, false), new layoutNode(true, false)],[new layoutNode(true, false), new layoutNode(false, false), new layoutNode(true, FLOUR), new layoutNode(true, false)],[new layoutNode(true, DONUT), new layoutNode(true, false), new layoutNode(true, false), new layoutNode(true, false)]```
+  ```[new layoutNode(true, false), new layoutNode(false, false), new layoutNode(true, false), new layoutNode(true, APPLE)],```
+  ```[new layoutNode(true, false), new layoutNode(false, false), new layoutNode(true, false), new layoutNode(true, false)],```
+  ```[new layoutNode(true, false), new layoutNode(false, false), new layoutNode(true, FLOUR), new layoutNode(true, false)],```
+  ```[new layoutNode(true, DONUT), new layoutNode(true, false), new layoutNode(true, false), new layoutNode(true, false)]```
 
 
 Demo
