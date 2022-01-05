@@ -10,10 +10,9 @@ path to fetch a list of items.
 
 User Stories
 ------
-1. As a thing-fetcher, I can provide a list of things and an intended search area and will be given
-an optimal path to follow to retrieve them.
-2. If my intended search area does not contain all items on my list, I am told which items are not
-present.
+1. As a thing-fetcher, I can provide a list of things and will be given an optimal path to follow to
+ retrieve them assuming a fixed search area.
+2. If the search area does not contain all items on my list, I am told which items are not present.
 
 Functional Details
 ------
@@ -55,6 +54,34 @@ Example Objects:
 ```{isWalkable: true, item: "apple"}```,
 ```{isWalkable: true, item: 0}```
 
+When a user provides a list of items, the pathfinder will first determine if the search area contains
+all items on the list, grabbing the item coordinates along the way (to be used to determine fetch order).
+
+In the same pass, a matrix is built that represents the walkability of the search area.
+
+If all items are found, the program will attempt to find a path.
+
+Else if not all items are found, the program will respond with which items are missing.
+
+Assumign all items are found, the program will sort them "from left to right, top to bottom" (i.e. all
+"x=0's" first, then "x=1 y=1" then "x=1 y=2"...etc.) as it is assumed the user will always start from 0,0.
+
+Once the list is sorted, the program will create subpaths by creating paths between item item in the
+list (in order), then comine those subpaths into a main path and return that main path to the user.
+
+Example Data Things
+------
+Element Objects:
+```{isWalkable: false, item: 0}```,
+```{isWalkable: true, item: "apple"}```,
+```{isWalkable: true, item: 0}```
+
+Grid
+```[
+  [{isWalkable: false, item: 0},{isWalkable: false, item: 0},{isWalkable: true, item: 0}],
+  [{isWalkable: true, item: 0},{isWalkable: true, item: "apple"},{isWalkable: true, item: 0}],
+  [{isWalkable: true, item: 0},{isWalkable: false, item: 0},{isWalkable: true, item: "banana"}],
+]```
 
 Demo
 ------
