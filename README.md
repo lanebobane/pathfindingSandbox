@@ -24,6 +24,15 @@ The order the user provides the items is not relevant. The path returned will at
 distance for the user but does not guarantee the absolute minimum (i.e. does not claim to solve the
 traveling salesman problem).
 
+User will provide a list of items in the form of:
+```['apple', 'banana', 'flour']```
+
+User will receive a path in the form of:
+```[[0,0], [0,1], 'apple', [0,2], [0,3], 'banana', [1,3], [2,3], [3,3], 'flour']```
+
+...where apple is located at (0,1), banana is located at (0,3), and flour is located at (3,3), all within
+a 4x4 grid with zero obstacles.
+
 Implementation Details
 ------
 Each search area will be represented as an array of arrays (2D) with each element in the sub-array being
@@ -33,13 +42,18 @@ Each element-object will contain the following data:
 * isWalkable: denotes whether the element can be walked over/travered or not.
 * item: contains a string-value that represents if an object is present at that location, and a 0 if
 no item is present.
-* Note: An unwalkable element cannot have an item in it, but a walkable element need not have an item
+
+*Note*: An unwalkable element cannot have an item in it, but a walkable element need not have an item
 in it.
 
 Example Objects:
-```{isWalkable: false, item: 0}```
-```{isWalkable: true, item: "apple"}```
+```{isWalkable: false, item: 0}```,
+```{isWalkable: true, item: "apple"}```,
 ```{isWalkable: true, item: 0}```
+
+
+
+
 
 Demo
 ------
