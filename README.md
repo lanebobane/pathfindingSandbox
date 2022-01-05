@@ -38,6 +38,10 @@ Implementation Details
 Each search area will be represented as an array of arrays (2D) with each element in the sub-array being
 an object.
 
+*Important:* Navigation coordinates provided by Pathfinding.js follow the [x, y] format, but are
+implemented as an array of arrays (2D). This means that when we say grid coordinate (1,2), this will
+in fact be Grid[2][1].
+
 Each element-object will contain the following data:
 * isWalkable: denotes whether the element can be walked over/travered or not.
 * item: contains a string-value that represents if an object is present at that location, and a 0 if
@@ -50,9 +54,6 @@ Example Objects:
 ```{isWalkable: false, item: 0}```,
 ```{isWalkable: true, item: "apple"}```,
 ```{isWalkable: true, item: 0}```
-
-
-
 
 
 Demo
