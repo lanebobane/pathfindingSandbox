@@ -4,9 +4,7 @@ PathfindingSandbox.js
 Project Description
 ------------
 
-The aim of this project is to explore the Pathfinding.js library and build some relevant utilities
-around finding optimals paths to collect a list of items. The goal of the utlities are to satisfy the
-user stories below.
+The aim of this project is to explore the [Pathfinding.js](https://qiao.github.io/PathFinding.js/visual/) library and build some relevant utilities around finding optimals paths to collect a list of items. The goal of the utlities are to satisfy the user stories below.
 
 User Stories
 ------

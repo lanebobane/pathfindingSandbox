@@ -38,9 +38,14 @@ function makeItemList(matrix){
 }
 
 // creates a route using the A* pathfinding algorithm.
-function createPath(_grid, itemList){
+// TODO: refactor so it takes a layout instead of a matrix and then calls
+// makeMatrixfromLayout within this function.
+// TODO: refactor to take a list of items (strings) instead of an itemList.
+// TODO: need to expand functionality so that entire item list is considered, not just
+// index 0 and index 1.
+function createPath(matrix, itemList){
   let finder = new PF.AStarFinder();
-  let grid = new PF.Grid(_grid)
+  let grid = new PF.Grid(matrix)
   let path = finder.findPath(
     itemList[0].x,
     itemList[0].y,
