@@ -15,4 +15,12 @@ const layout1 = [
   [new layoutNode(true, DONUT), new layoutNode(true, false), new layoutNode(true, false), new layoutNode(true, false)]
 ]
 
-module.exports = {layout1}
+// 4x4 grid containing no items.
+const layout2 = [
+  [new layoutNode(true, false), new layoutNode(false, false), new layoutNode(true, false), new layoutNode(true, false)],
+  [new layoutNode(true, false), new layoutNode(false, false), new layoutNode(true, false), new layoutNode(true, false)],
+  [new layoutNode(true, false), new layoutNode(false, false), new layoutNode(true, false), new layoutNode(true, false)],
+  [new layoutNode(true, false), new layoutNode(true, false), new layoutNode(true, false), new layoutNode(true, false)]
+]
+
+module.exports = {layout1, layout2}
