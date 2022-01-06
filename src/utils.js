@@ -18,7 +18,7 @@ function makeMatrixFromLayout(layout){
   return grid
 }
 
-// gets all items in the grid and returns a list formatted for Pathfinding.js
+// gets all items in the layout and returns a list formatted for createPath()
 // to use.
 function makeItemList(layout, list){
   let itemList = []
@@ -46,12 +46,12 @@ function makeItemList(layout, list){
 }
 
 // creates a route using the A* pathfinding algorithm.
-// TODO: refactor so it takes a layout instead of a matrix and then calls
-// makeMatrixfromLayout within this function.
-// TODO: refactor to take a list of items (strings) instead of an itemList.
 // TODO: need to expand functionality so that entire item list is considered, not just
 // index 0 and index 1.
-function createPath(matrix, itemList){
+function createPath(layout, listOfItemStrings){
+
+  const itemList = makeItemList(layout, listOfItemStrings)
+  const matrix = makeMatrixFromLayout(layout)
   // Don't try to do anything if the inputs are false.
   if(matrix === false || itemList === false){
     return false
@@ -67,6 +67,8 @@ function createPath(matrix, itemList){
     itemList[1].y,
     grid
   )
+  console.log('Origin: ', itemList[0].item)
+  console.log('Destination: ', itemList[1].item)
   return path
 }
 
