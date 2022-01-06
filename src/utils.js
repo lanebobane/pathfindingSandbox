@@ -60,6 +60,8 @@ function createPath(layout, listOfItemStrings){
   // blocked by obstacles).
   let finder = new PF.AStarFinder();
   let grid = new PF.Grid(matrix)
+  // related to TODO above: change line 64-70 to instead loop through itemList and add
+  // that sub path to the main path.
   let path = finder.findPath(
     itemList[0].x,
     itemList[0].y,
