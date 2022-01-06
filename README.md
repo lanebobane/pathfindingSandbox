@@ -12,6 +12,18 @@ User Stories
  retrieve them assuming a fixed search area.
 2. If the search area does not contain all items on my list, I am told which items are not present.
 
+`Pathfinding.js` & `PathfindingSandbox.js`
+------
+`Pathfinding.js` is a library created by [Xueqiao Xu](https://github.com/qiao) and [other authors](https://github.com/qiao/PathFinding.js/blob/master/docs/contributor-guide/authors.md) that aims to provide a simple Javascript library for 2D pathfinding. It provides options for multiple pathfinding algorithms and allows the user to easily create a "matrix" of walkable and unwalkable cells.
+
+`PathfindingSandbox.js` builds on top of `Pathfinding.js` by allowing the user draw "layouts" in the `layouts.js` file and place items within the matrix, while also still being able to set each cell as walkable or not.
+
+The other utility functions then allow the user to use these layouts to provide `Pathfinding.js` with the inputs it needs to find a path.
+
+First, `PathfindingSandbox.js` can extract a matrix from a layout, one of the necessary inputs for `Pathfinding.js`.
+
+Second, `PathfindingSandbox.js` can handle multi-item lists (i.e. A->B->C->D...) whereas `Pathfinding.js` can only handle a single origin and destination (i.e. A->B).
+
 Functional Details
 ------
 For the simplicity of this project, the items the user will search for will be limited to the following:
@@ -46,18 +58,17 @@ no item is present.
 **Note**: An unwalkable element cannot have an item in it, but a walkable element need not have an item
 in it.
 
-Example Objects:
+Example layoutNode objects:
 ```{isWalkable: false, item: 0}```,
 ```{isWalkable: true, item: "apple"}```,
 ```{isWalkable: true, item: 0}```
 
-When a user provides a list of items, the pathfinder first determines if the Layout contains
+When a user provides a list of items, `PathfindingSandbox.js` first determines if the Layout contains
 all items on the list. If all items are found, an item-list is created with the items and their coordinates. Else if not all items are found, the program will respond with a message saying so.
 
-A matrix is also built from the Layout, and a Grid (Pathfinding.js Class object) is created from the matrix.
+A matrix is also built based on the Layout, and a Grid (`Pathfinding.js` Class object) is created with the matrix as an input.
 
-The program will attempt to find a path using the created Grid and the Item List.
-
+`Pathfinding.js` will attempt to find a path using the created Grid and the Item List. If no path is available, an empty list will be returned.
 
 Example Data Things
 ------
