@@ -6,6 +6,11 @@ Project Description
 
 The aim of this project is to explore the [Pathfinding.js](https://qiao.github.io/PathFinding.js/visual/) library and extend the functionality to allow the user to obtain a path to collect a list of items.
 
+Getting Started
+------------
+
+Download repo and run `node src/index.js` from repo root.
+
 User Stories
 ------
 1. As a thing-fetcher, I can provide a list of things and will be given an optimal path to follow to
