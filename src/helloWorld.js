@@ -1,3 +1,5 @@
+const PF = require('pathfinding');
+
 // A quick demo of Pathfinding.js's functionality.
 function helloWorld() {
 
@@ -19,8 +21,8 @@ function helloWorld() {
   var finder = new PF.AStarFinder();
 
   // Finders can be used on different Grids.
-  var path = finder.findPath(0, 0, 3, 3, grid);
-  var pathMatrix = finder.findPath(0, 0, 3, 3, gridMatrix);
+  var path = finder.findPath(1, 1, 3, 3, grid);
+  var pathMatrix = finder.findPath(1, 1, 3, 3, gridMatrix);
 
   console.log('Path using Grid with no obstacles')
   console.log(path)
@@ -28,3 +30,5 @@ function helloWorld() {
   console.log('Path using Grid containing obstacles')
   console.log(pathMatrix)
 }
+
+module.exports = {helloWorld}

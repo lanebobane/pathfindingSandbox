@@ -4,7 +4,7 @@ PathfindingSandbox.js
 Project Description
 ------------
 
-The aim of this project is to explore the [Pathfinding.js](https://qiao.github.io/PathFinding.js/visual/) library and build some relevant utilities around finding optimals paths to collect a list of items. The goal of the utlities are to satisfy the user stories below.
+The aim of this project is to explore the [Pathfinding.js](https://qiao.github.io/PathFinding.js/visual/) library and extend the functionality to allow the user to obtain a path to collect a list of items.
 
 User Stories
 ------
@@ -84,4 +84,4 @@ Layout
 Demo
 ------
 
-An [online demo](http://www.google.com) can be found to showcase the functionality of this project.
+An [online demo](https://youtu.be/o0iMGFq-8Hc) can be found to showcase the functionality of this project.
